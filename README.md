@@ -4,7 +4,7 @@
 
 ---
 
-## 1) What this is (plain English)
+## 1) What this is 
 
 In clinics with spotty internet, staff still need to collect visit data, keep it private, and prove later that nothing was altered.
 
@@ -44,3 +44,5 @@ flowchart LR
   C -- Yes --> D[Iagon Upload\n(sharded, encrypted)]
   D -->|returns file_id| E[Cardano Anchor\nCIP-83 (encrypted metadata)]
   E --> F[Audit / Verify\nhash match + restore drill]
+
+
