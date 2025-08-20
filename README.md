@@ -38,11 +38,10 @@ This MVP lets teams:
 
 ```mermaid
 flowchart LR
-  A[Tablet: Capture Visit\n(JSON, images, audio)] --> B[Local Encrypt + Bundle\nZIP + manifest.json (SHA-256)]
+  A[Tablet: Capture Visit<br/>(JSON, images, audio)] --> B[Local Encrypt + Bundle<br/>ZIP + manifest.json (SHA-256)]
   B --> C{Connectivity?}
-  C -- No --> B
-  C -- Yes --> D[Iagon Upload\n(sharded, encrypted)]
-  D -->|returns file_id| E[Cardano Anchor\nCIP-83 (encrypted metadata)]
-  E --> F[Audit / Verify\nhash match + restore drill]
-
+  C -->|No| B
+  C -->|Yes| D[Iagon Upload<br/>(sharded, encrypted)]
+  D -->|returns file_id| E[Cardano Anchor<br/>CIP-83 (encrypted metadata)]
+  E --> F[Audit / Verify<br/>hash match + restore drill]
 
