@@ -2,6 +2,8 @@
 **Encrypted off-chain storage (Iagon) + on-chain integrity anchors (Cardano / CIP-83).**  
 **Key rule:** *No PHI (personally identifiable health data) ever goes on-chain.*
 
+This project integrates with the Midnight Network.
+
 ---
 
 ## Background
