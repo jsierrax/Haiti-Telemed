@@ -4,6 +4,8 @@
 
 This project integrates with the Midnight Network.
 
+> Status: Midnight integration is part of the project roadmap and is not yet implemented in the current public MVP. The present repository remains Cardano + Iagon based while Midnight migration depends on required technical support.
+
 ---
 
 ## Background
@@ -69,11 +71,55 @@ This MVP lets teams:
 
 ## 4) How it works (at a glance)
 
+
+````md
+## 4) How it works (at a glance)
+
 ```mermaid
-flowchart LR;
-  A["Tablet capture: JSON, images, audio"] --> B["Encrypt & bundle: ZIP + manifest.json (SHA-256)"];
-  B --> C{"Connectivity available?"};
-  C -->|No| B;
-  C -->|Yes| D["Iagon upload: sharded & encrypted"];
-  D -->|file_id| E["Cardano anchor: CIP-83 encrypted metadata"];
-  E --> F["Audit & verify: hash match + restore drill"];
+flowchart LR
+  A["Tablet capture: JSON, images, audio"] --> B["Encrypt & bundle: ZIP + manifest.json (SHA-256)"]
+  B --> C{"Connectivity available?"}
+  C -->|No| B
+  C -->|Yes| D["Iagon upload: sharded & encrypted"]
+  D -->|file_id| E["Cardano anchor: CIP-83 encrypted metadata"]
+  E --> F["Audit & verify: hash match + restore drill"]
+
+---
+
+## 5) Exploratory Cardano-side wallet path: GameChanger Wallet
+
+**Status:** Exploratory / under evaluation
+
+In addition to the current Cardano + Iagon architecture, this project is evaluating **GameChanger Wallet** as a possible **Cardano-side interaction layer** for QR-driven workflows, transaction orchestration, and hash-anchored record verification.
+
+This does **not** change the project’s core privacy model:
+
+- **No PHI goes on-chain**
+- Medical records remain **off-chain**
+- Cardano is used only for **integrity anchors**, verification, and auditability
+- Any QR-based interaction is intended for **workflow access, portability, or verification**, not for exposing private medical data
+
+### Why GameChanger is being evaluated
+
+GameChanger’s public architecture and educational materials suggest a possible fit for this MVP because they emphasize:
+
+- URL/JSON-based dApp and wallet interaction patterns
+- QR-mediated user and device flows
+- scripting and transaction orchestration
+- hash-aware and file-related Cardano workflows
+
+For this repository, that makes GameChanger relevant as a **potential operational layer** for initiating or simplifying Cardano-side integrity actions in low-connectivity healthcare environments.
+
+### Important implementation note
+
+At this stage, this repository does **not** claim:
+
+- a production GameChanger integration
+- a turnkey healthcare deployment
+- a one-step “medical data hash from just a QR code” implementation
+
+The current position is more conservative: **GameChanger appears to be a feasible component for future Cardano-side workflow design**, pending technical validation, compliance review, and implementation support.
+
+### Reference
+
+- GameChanger education brief: https://gc-education-one-pager.netlify.app/
