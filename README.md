@@ -68,11 +68,6 @@ This MVP lets teams:
 - **Simplicity**: small scripts + a one-page SOP for field use.
 
 ---
-
-## 4) How it works (at a glance)
-
-
-````md
 ## 4) How it works (at a glance)
 
 ```mermaid
