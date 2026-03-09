@@ -78,7 +78,7 @@ flowchart LR
   C -->|Yes| D["Iagon upload: sharded & encrypted"]
   D -->|file_id| E["Cardano anchor: CIP-83 encrypted metadata"]
   E --> F["Audit & verify: hash match + restore drill"]
-
+```
 ---
 
 ## 5) Exploratory Cardano-side wallet path: GameChanger Wallet
