@@ -4,7 +4,20 @@
 
 This project integrates with the Midnight Network.
 
-> Status: Midnight integration is part of the project roadmap and is not yet implemented in the current public MVP. The present repository remains Cardano + Iagon based while Midnight migration depends on required technical support.
+## Midnight Preprod Status
+
+This repository is not yet running against Midnight Preprod.
+
+Current status:
+- Midnight integration is planned but not yet implemented in the current public MVP.
+- The present repository remains Cardano + Iagon based.
+- No `testnet-02` configuration is used in this repository.
+
+Blocker:
+- Preprod migration depends on required technical support/guidance for Midnight integration.
+
+Next step:
+- Once Preprod integration is available, this README will be updated with exact Preprod configuration and usage steps.
 
 ---
 
@@ -81,7 +94,57 @@ flowchart LR
 ```
 ---
 
-## 5) Exploratory Cardano-side wallet path: GameChanger Wallet
+## 5) Proposed ecosystem stack
+
+As the Haiti Telemedicine architecture evolves, the broader stack is shaping up around several complementary components:
+
+- **iTERVE** – intended support for palm-based capture of patient vital signs in rural care settings
+- **OnDoctor365** – telemedicine interface and clinical workflow expertise layer
+- **GameChanger Wallet** – exploratory Cardano-side interaction path for hashing, transaction orchestration, and verifiable integrity workflows
+- **Iagon** – decentralized encrypted off-chain storage for medical records and associated files
+- **Midnight** – privacy, identity, consent, and access-control layer for sensitive patient data
+
+### Current status
+This reflects the proposed target architecture, not a fully implemented production stack.
+Some integration details are still being defined, including:
+- how iTERVE fits into the broader patient-data workflow
+- how records move across capture, hashing, storage, and access-control layers
+- how Iagon and Midnight will interoperate within the final privacy-preserving architecture
+- how OnDoctor365 interfaces operationally with field and clinical processes
+
+### Next coordination milestone
+
+A cross-team technical alignment meeting is being organized with the following participants and technical roles:
+- **OnDoctor365** — telemedicine platform and clinical workflow integration
+- **GameChanger** — Cardano-side transaction orchestration, hashing flows, and integrity workflow design
+- **Haiti CS data collection and integration team** — field data collection, systems integration, and implementation coordination
+- **iTERVE** — palm-based vital-sign capture and device/data integration
+- **Iagon** — decentralized encrypted storage architecture, retrieval flows, and data persistence design
+- **Midnight** — privacy, identity, consent, and access-control architecture
+
+The goal of this session is to define:
+- capture and intake responsibilities
+- data handoff points between tools and teams
+- integrity and verification workflow requirements
+- storage and retrieval responsibilities
+- privacy, identity, consent, and access-control requirements
+
+This meeting is intended to inform the next architecture phase, including how the privacy-preserving identity, consent, access-control, and decentralized storage layers should be mapped into the broader system design.
+
+### Design intent
+
+The intended system direction is:
+
+1. **Perform patient triage** and assess the immediate care context.
+2. **Capture patient vitals and field data** through appropriate care interfaces and devices.
+3. **Generate verifiable integrity artifacts** for auditability and record validation.
+4. **Store encrypted records off-chain** using decentralized infrastructure.
+5. **Apply privacy, identity, consent, and access control** around sensitive medical information.
+6. **Enable telemedicine workflows** that remain practical in low-connectivity environments.
+
+This direction remains aligned with the project’s core rule: **no PHI goes on-chain**.
+
+## 6) Exploratory Cardano-side wallet path: GameChanger Wallet
 
 **Status:** Exploratory / under evaluation
 
